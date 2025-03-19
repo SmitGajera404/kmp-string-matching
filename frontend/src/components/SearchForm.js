@@ -8,7 +8,7 @@ const SearchForm = ({ setResults }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://3.108.124.111/api/search', { text, pattern });
+            const response = await axios.post('http://3.108.124.111:5000/api/search', { text, pattern });
             setResults(response.data.matches);
         } catch (error) {
             console.error('Error searching:', error);
